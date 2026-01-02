@@ -3,6 +3,7 @@
 基于 **FastAPI** 构建的高性能宠物店管理系统后台 API。支持商品全生命周期管理、订单自动化处理、会员权益系统及实时物流追踪。
 
 **GitHub 仓库地址**: [https://github.com/gaogen123/pet-store-mrg](https://github.com/gaogen123/pet-store-mrg)
+**关联前端仓库**: [https://github.com/gaogen123/pet-marketplace](https://github.com/gaogen123/pet-marketplace)
 
 ---
 

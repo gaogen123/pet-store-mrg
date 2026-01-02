@@ -1,0 +1,11 @@
+替换规则：
+bg-white/80 backdrop-blur-lg -> bg-white/15 backdrop-blur-xl
+border border-gray-200/50 -> border border-white/20
+text-gray-900 -> text-white
+text-gray-600 -> text-gray-300
+border-gray-200 -> border-white/20
+border-gray-100 -> border-white/10
+hover:bg-gray-50 -> hover:bg-white/10
+bg-gray-50 -> bg-white/5
+text-left py-3 px-4 text-gray-600 -> text-left py-3 px-4 text-gray-300
+className="bg-white rounded -> className="bg-white/95 rounded

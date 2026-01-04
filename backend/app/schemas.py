@@ -71,6 +71,12 @@ class Product(ProductBase):
             return [s.spec for s in v]
         return v
 
+class ProductPagination(BaseModel):
+    total: int
+    items: List[Product]
+    page: int
+    size: int
+
 
 
 class VIPLevelBase(BaseModel):

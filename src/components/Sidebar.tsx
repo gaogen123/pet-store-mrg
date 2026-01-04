@@ -19,15 +19,15 @@ export function Sidebar({ activeTab, onTabChange, onLogout }: SidebarProps) {
   ];
 
   return (
-    <aside className="w-64 h-screen bg-white/30 backdrop-blur-xl border-r border-white/40 pt-6 px-6 pb-0 shadow-2xl flex flex-col flex-shrink-0">
-      <div className="flex items-center gap-2 mb-8">
+    <aside className="w-64 h-screen bg-white/30 backdrop-blur-xl border-r border-white/40 pt-6 px-6 flex flex-col flex-shrink-0 shadow-2xl">
+      <div className="flex items-center gap-2 mb-8 flex-shrink-0">
         <div className="p-2 bg-gradient-to-br from-orange-400 to-pink-500 rounded-xl shadow-lg">
           <PawPrint className="w-6 h-6 text-white" />
         </div>
         <h1 className="text-xl text-gray-800 font-bold">宠物后台管理</h1>
       </div>
 
-      <nav className="space-y-2 flex-1 overflow-y-auto pr-2">
+      <nav className="space-y-2 flex-1 overflow-y-auto pr-2 min-h-0">
         {menuItems.map((item) => {
           const Icon = item.icon;
           return (
@@ -48,7 +48,7 @@ export function Sidebar({ activeTab, onTabChange, onLogout }: SidebarProps) {
 
       {/* 退出登录按钮 */}
       {onLogout && (
-        <div className="mt-auto py-6 border-t border-white/40">
+        <div className="py-6 border-t border-white/40 flex-shrink-0">
           <button
             onClick={onLogout}
             className="w-full flex items-center gap-3 px-4 py-3 text-gray-600 hover:bg-red-50 hover:text-red-500 rounded-xl transition-all duration-300"

@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 from typing import List, Optional
 from .. import models, schemas, database
 import shutil
@@ -12,7 +12,7 @@ router = APIRouter(
     responses={404: {"description": "Not found"}},
 )
 
-@router.get("/")
+@router.get("/", response_model=schemas.ProductPagination)
 def read_products(
     skip: int = 0, 
     limit: int = 100, 
@@ -47,7 +47,11 @@ def read_products(
         query = query.order_by(models.Product.sales.desc())
         
     total = query.count()
-    products = query.offset(skip).limit(limit).all()
+    # Use joinedload to eagerly load relationships for Pydantic validation
+    products = query.options(
+        joinedload(models.Product.images),
+        joinedload(models.Product.specs)
+    ).offset(skip).limit(limit).all()
     
     return {
         "total": total,
